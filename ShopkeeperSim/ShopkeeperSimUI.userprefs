@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Inventory\Items\Effects\HealthHealingEffect.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Inventory\CSSInventory.cs" Line="10" Column="3" />
+      <File FileName="Assets\Scripts\Inventory\GameInventory.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Inventory\Items\CSSItem.cs" Line="23" Column="1" />
+      <File FileName="Assets\Scripts\Inventory\Items\Category\GameItemCategory.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Inventory\Items\Effects\GameEffectChain.cs" Line="131" Column="1" />
+      <File FileName="Assets\Scripts\Inventory\Items\Effects\HealthHealingEffect.cs" Line="24" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
