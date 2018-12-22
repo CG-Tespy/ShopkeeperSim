@@ -1,0 +1,57 @@
+Concept:
+
+CG-Tespy
+
+
+
+Game Design:
+
+CG-Tespy
+
+
+
+Programming:
+
+CG-Tespy
+
+
+
+Music:
+
+Viktor Kraus
+
+
+
+Sound Effects:
+
+Viktor Kraus
+kiddpark from freesound.org
+
+
+
+Game Engine (Unity 5.0):
+
+Unity Technologies
+
+
+
+Engine Utilities:
+DotBunny Inc
+
+Microsoft
+
+
+
+Graphical Assets:
+
+Unity Technologies
+
+Beyonderboy of itch.io
+
+Pixel Sagas of daFont.com
+
+
+
+Special Thanks:
+
+You

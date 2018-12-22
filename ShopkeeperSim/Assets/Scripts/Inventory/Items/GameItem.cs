@@ -7,59 +7,59 @@ using UnityEngine.Events;
 public abstract class GameItem : ScriptableObject, System.IEquatable<GameItem>
 {
 
-	#region Nested Classes
-	
-	[System.Serializable]
-	public class Graphics : System.IEquatable<Graphics>
-	{
-		public Sprite sprite;
-		public Mesh model;
+    #region Nested Classes
 
-		public Graphics(Graphics original)
-		{
-			this.sprite = 		original.sprite;
-			this.model = 		original.model;
-		}
-		public Graphics(Sprite sprite, Mesh model)
-		{
-			this.sprite = 			sprite;
-			this.model = 			model;
-		}
+    [System.Serializable]
+    public class Graphics : System.IEquatable<Graphics>
+    {
+        public Sprite sprite;
+        public Mesh model;
 
-		public bool Equals(Graphics other)
-		{
-			bool sameSprite = 			this.sprite.Equals(other.sprite);
-			bool sameModel = 			this.model.Equals(other.model);
+        public Graphics(Graphics original)
+        {
+            this.sprite = original.sprite;
+            this.model = original.model;
+        }
+        public Graphics(Sprite sprite, Mesh model)
+        {
+            this.sprite = sprite;
+            this.model = model;
+        }
 
-			return sameSprite && sameModel;
-		}
+        public bool Equals(Graphics other)
+        {
+            bool sameSprite = this.sprite.Equals(other.sprite);
+            bool sameModel = this.model.Equals(other.model);
 
-		public static Graphics Copy(Graphics original)
-		{
-			return new Graphics(original.sprite, original.model);
-		}
-	}
+            return sameSprite && sameModel;
+        }
 
-	#endregion
+        public static Graphics Copy(Graphics original)
+        {
+            return new Graphics(original.sprite, original.model);
+        }
+    }
 
-	#region Customize in Editor
-	[SerializeField] GameItemCategory[] _categories = 		null;
-	[SerializeField] protected Graphics graphics = 			null;
-	
+    #endregion
 
-	//[SerializeField] CustomAttribute[] _custAttributes;
-	#endregion
-	
+    #region Customize in Editor
+    [SerializeField] GameItemCategory[] _categories = null;
+    [SerializeField] protected Graphics graphics = null;
 
-	#region Properties for programmatic access
-	public virtual GameItemCategory[] categories
-	{
-		get 				{ return _categories; }
-		protected set 		{ _categories = value; }
-	}
-	public Sprite sprite 								{ get { return graphics.sprite; } }
-	public Mesh model 									{ get { return graphics.model; } }
 
+    //[SerializeField] CustomAttribute[] _custAttributes;
+    #endregion
+
+
+    #region Properties for programmatic access
+    public virtual GameItemCategory[] categories
+    {
+        get { return _categories; }
+        protected set { _categories = value; }
+    }
+    public Sprite sprite                                { get { return graphics.sprite; } }
+    public Mesh model                                   { get { return graphics.model; } }
+    public virtual IInventory belongsTo                 { get; set; }
 	#endregion
 
 	// Methods
@@ -111,5 +111,6 @@ public abstract class GameItem : ScriptableObject, System.IEquatable<GameItem>
 			to.categories[i] = from.categories[i];
 		
 		to.graphics = 			Graphics.Copy(from.graphics);
+
 	}
 }

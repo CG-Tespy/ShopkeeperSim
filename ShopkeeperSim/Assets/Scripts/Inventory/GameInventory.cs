@@ -63,11 +63,12 @@ public abstract class GameInventory<TItem> : ScriptableObject, IInventory<TItem>
 			NullItemAlert();
 
 		bool haveSpace = 			infiniteCapacity || itemCount < capacity;
-		bool newItem = 				Contains(item);
+		bool newItem = 				!Contains(item);
 		if (haveSpace && newItem)
 		{
 			items.Add(item);
 			Debug.Log("Added " + item.name + " to inventory " + this.name);
+            item.belongsTo =        this;
 			return true;
 		}
 		else 
@@ -102,6 +103,7 @@ public abstract class GameInventory<TItem> : ScriptableObject, IInventory<TItem>
 		{
 			items.Remove(item);
 			Debug.Log("Removed item " + item.name + " from inventory " + this.name + ".");
+            item.belongsTo =                null;
 			return true;
 		}
 		else
@@ -115,8 +117,8 @@ public abstract class GameInventory<TItem> : ScriptableObject, IInventory<TItem>
 
 	public virtual bool Contains(TItem item)
 	{
-		foreach (TItem invItem in items)
-			if (invItem.Equals(item))
+        foreach (TItem invItem in items)
+            if (Object.ReferenceEquals(invItem, item))
 				return true;
 
 		return false;
@@ -130,7 +132,9 @@ public abstract class GameInventory<TItem> : ScriptableObject, IInventory<TItem>
 	{
 		items.Clear();
 	}
-	#endregion
+	
+    
+    #endregion
 	
 
 	#region Helpers

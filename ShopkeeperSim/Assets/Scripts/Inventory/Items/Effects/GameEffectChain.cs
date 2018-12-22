@@ -4,17 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEditor;
 
-//[CreateAssetMenu(menuName = "Game Effects/Effect Chain", fileName = "NewGameEffectChain")]
+[CreateAssetMenu(menuName = "Game Effects/Effect Chain", fileName = "New GameEffectChain")]
 public class GameEffectChain : GameEffect
 {
-	static string createPath = "Assets/NewGameEffectChain.asset";
-
-	[MenuItem("ScriptableObjects/Create GameEffectChain")]
-	static void CreateThis()
-	{
-		AssetDatabase.CreateAsset(ScriptableObject.CreateInstance<GameEffectChain>(), createPath);
-	}
-
 	// To customize in the Inspector
 	[SerializeField] protected GameEffect[] effects;
 	
